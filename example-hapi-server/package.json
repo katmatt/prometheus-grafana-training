@@ -1,0 +1,16 @@
+{
+  "name": "example-hapi-server",
+  "version": "1.0.0",
+  "description": "A hapi example server that uses tdeekens/promster to expose prometheus metrics.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@promster/hapi": "^4.1.11",
+    "nodemon": "^2.0.4",
+    "prom-client": "^12.0.0"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js"
+  }
+}
