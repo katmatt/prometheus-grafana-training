@@ -1,7 +1,7 @@
 # Introduction
 
 This git repository provides a hapi nodejs server that uses promster to export prometheus metrics. 
-this server than can be started in a docker compose environment that runs prometheus and grafana to retrieve metrics fom the hapi server.
+This server can be started in a docker compose environment that runs prometheus and grafana to retrieve metrics fom the hapi server.
 
 It's used in an internal training on monitoring with prometheus, grafana and nodejs.
 

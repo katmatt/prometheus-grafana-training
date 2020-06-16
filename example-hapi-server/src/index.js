@@ -1,7 +1,18 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const fetch = require('node-fetch');
 const { createPlugin, getSummary, getContentType } = require('@promster/hapi');
+
+function pause(delayInMs) {
+    return new Promise((resolve) => setTimeout(resolve, delayInMs))
+}
+
+async function longRunning() {
+    await pause(Math.random() * 5000)
+
+    return 'Hello World!';
+}
 
 const init = async () => {
     const server = Hapi.server({
@@ -12,8 +23,15 @@ const init = async () => {
         method: 'GET',
         path: '/',
         handler: (request, h) => {
-
             return 'Hello World!';
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/delay',
+        handler: (request, h) => {
+            return longRunning()
         }
     });
 
