@@ -4,3 +4,8 @@ scrape_configs:
   static_configs:
   - targets:
     - example-hapi-server:4000
+- job_name: example-hapi-server-1
+  scrape_interval: 5s
+  static_configs:
+  - targets:
+    - example-hapi-server-1:4000
